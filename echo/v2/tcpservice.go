@@ -41,7 +41,7 @@ func ListenAndServe(cfg *Config, handler Handler) {
 
 			// 先关闭 listener 阻止新连接进入
 			_ = listener.Close()
-			// 组个关闭已建立的连接
+			// 逐个关闭已建立的连接
 			_ = handler.Close()
 		}
 	}()
